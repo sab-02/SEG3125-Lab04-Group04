@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luxe Hair Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Luxe Hair Studio</a>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero d-flex align-items-center text-center text-lg-start">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold">The confidence that changes your <span class="accent">look</span>.</h1>
+        <p class="mt-3">Professional hair styling tailored to your personality.</p>
+        <a href="#booking" class="btn btn-dark mt-3">Book Your Appointment</a>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" class="img-fluid rounded-4 shadow" alt="Hair styling">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Our Services</h2>
+    <div class="row g-4">
+
+      <!-- Haircut -->
+      <div class="col-md-4">
+        <div class="card service-card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e" class="card-img-top" alt="Haircut">
+          <div class="card-body text-center">
+            <h5 class="card-title">Haircut</h5>
+            <p>$40 - 30 minutes</p>
+            <button class="btn btn-outline-dark w-100 select-service"
+              data-service="Haircut - $40">Select</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coloring -->
+      <div class="col-md-4">
+        <div class="card service-card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e" class="card-img-top" alt="Hair Coloring">
+          <div class="card-body text-center">
+            <h5 class="card-title">Hair Coloring</h5>
+            <p>$80 - 60 minutes</p>
+            <button class="btn btn-outline-dark w-100 select-service"
+              data-service="Hair Coloring - $80">Select</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Styling -->
+      <div class="col-md-4">
+        <div class="card service-card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f" class="card-img-top" alt="Styling">
+          <div class="card-body text-center">
+            <h5 class="card-title">Styling</h5>
+            <p>$50 - 45 minutes</p>
+            <button class="btn btn-outline-dark w-100 select-service"
+              data-service="Styling - $50">Select</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTS -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Meet Our Experts</h2>
+    <div class="row text-center">
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39" class="rounded-circle mb-3" width="150">
+        <h5>John Clark</h5>
+        <p>Senior Stylist</p>
+      </div>
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" class="rounded-circle mb-3" width="150">
+        <h5>Sophia Lee</h5>
+        <p>Color Specialist</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING SECTION -->
+<section id="booking" class="py-5 booking-section">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Book Your Appointment</h2>
+      <p class="text-muted">Select your service and reserve your perfect time.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- FORM COLUMN -->
+      <div class="col-lg-7">
+        <form id="bookingForm" class="booking-card p-4 p-lg-5">
+
+          <!-- Service -->
+          <div class="mb-4">
+            <label class="form-label fw-semibold">
+              <i class="bi bi-scissors me-2"></i>Select Service
+            </label>
+            <select class="form-select form-select-lg" id="serviceSelect" required>
+              <option value="">Choose...</option>
+              <option>Haircut - $40</option>
+              <option>Hair Coloring - $80</option>
+              <option>Styling - $50</option>
+            </select>
+          </div>
+
+          <!-- Date + Time -->
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <label class="form-label fw-semibold">
+                <i class="bi bi-calendar-event me-2"></i>Date
+              </label>
+              <input type="date" class="form-control form-control-lg" id="dateInput" required>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label fw-semibold">
+                <i class="bi bi-clock me-2"></i>Time
+              </label>
+              <select class="form-select form-select-lg" id="timeSelect" required>
+                <option value="">Choose...</option>
+                <option>10:00</option>
+                <option>12:00</option>
+                <option>14:00</option>
+                <option>16:00</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Personal Info -->
+          <div class="mb-4">
+            <label class="form-label fw-semibold">
+              <i class="bi bi-person me-2"></i>Full Name
+            </label>
+            <input type="text" class="form-control form-control-lg" id="nameInput" required>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label fw-semibold">
+              <i class="bi bi-envelope me-2"></i>Email
+            </label>
+            <input type="email" class="form-control form-control-lg" id="emailInput" required>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- SUMMARY COLUMN -->
+      <div class="col-lg-5">
+        <div class="summary-card p-4 p-lg-5 h-100">
+
+          <h5 class="fw-bold mb-4">Your Appointment</h5>
+
+          <div id="bookingSummary" class="summary-content mb-4">
+            <p class="text-muted">No selection yet.</p>
+          </div>
+
+          <!-- Confirm Button -->
+          <button id="confirmBtn"
+                  class="btn btn-primary btn-lg w-100 booking-btn"
+                  disabled>
+            Confirm Booking
+          </button>
+
+          <!-- Confirmation Message -->
+          <div id="confirmationMessage" class="confirmation-card d-none mt-4"></div>
+
+          <hr class="my-4">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center py-4">
+  <p>Luxe Hair Studio | 123 Beauty Street | Open 9AM - 6PM | (123) 456-7890</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
