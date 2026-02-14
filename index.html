@@ -16,14 +16,41 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">Luxe Hair Studio</a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#experts">Our Experts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#booking">Booking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
+
 
 <!-- HERO SECTION -->
 <section class="hero d-flex align-items-center text-center text-lg-start">
@@ -42,7 +69,7 @@
 </section>
 
 <!-- SERVICES -->
-<section class="py-5 bg-light">
+<section id="services" class="py-5 bg-light">
   <div class="container">
     <h2 class="text-center mb-4">Our Services</h2>
     <div class="row g-4">
@@ -91,20 +118,92 @@
 </section>
 
 <!-- EXPERTS -->
-<section class="py-5">
+<section id="experts" class="py-5 bg-light">
   <div class="container">
-    <h2 class="text-center mb-4">Meet Our Experts</h2>
-    <div class="row text-center">
-      <div class="col-md-6">
-        <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39" class="rounded-circle mb-3" width="150">
-        <h5>John Clark</h5>
-        <p>Senior Stylist</p>
+    <h2 class="text-center mb-5">Meet Our Experts</h2>
+
+    <div id="expertsCarousel" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row text-center">
+
+            <div class="col-md-4">
+              <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39"
+                   class="rounded-circle mb-3 shadow"
+                   width="150">
+              <h5>John Clark</h5>
+              <p class="text-muted">Senior Stylist</p>
+            </div>
+
+            <div class="col-md-4">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+                   class="rounded-circle mb-3 shadow"
+                   width="150">
+              <h5>Sophia Lee</h5>
+              <p class="text-muted">Color Specialist</p>
+            </div>
+
+            <div class="col-md-4">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
+                   class="rounded-circle mb-3 shadow"
+                   width="150">
+              <h5>Emma Rodriguez</h5>
+              <p class="text-muted">Creative Stylist</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row text-center">
+
+            <div class="col-md-4">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+                   class="rounded-circle mb-3 shadow"
+                   width="150">
+              <h5>Michael Brown</h5>
+              <p class="text-muted">Beard Specialist</p>
+            </div>
+
+            <div class="col-md-4">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+                   class="rounded-circle mb-3 shadow"
+                   width="150">
+              <h5>Olivia Chen</h5>
+              <p class="text-muted">Hair Treatment Expert</p>
+            </div>
+
+            <div class="col-md-4">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9"
+                   class="rounded-circle mb-3 shadow"
+                   width="150">
+              <h5>Daniel Smith</h5>
+              <p class="text-muted">Junior Stylist</p>
+            </div>
+
+          </div>
+        </div>
+
       </div>
-      <div class="col-md-6">
-        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" class="rounded-circle mb-3" width="150">
-        <h5>Sophia Lee</h5>
-        <p>Color Specialist</p>
-      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev"
+              type="button"
+              data-bs-target="#expertsCarousel"
+              data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next"
+              type="button"
+              data-bs-target="#expertsCarousel"
+              data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
     </div>
   </div>
 </section>
@@ -136,6 +235,23 @@
               <option>Styling - $50</option>
             </select>
           </div>
+
+          <!-- Stylist -->
+          <div class="mb-4">
+            <label class="form-label fw-semibold">
+              <i class="bi bi-person-badge me-2"></i>Choose Your Stylist
+            </label>
+            <select class="form-select form-select-lg" id="stylistSelect" required>
+              <option value="">Choose...</option>
+              <option>John Clark – Senior Stylist</option>
+              <option>Sophia Lee – Color Specialist</option>
+              <option>Emma Rodriguez – Creative Stylist</option>
+              <option>Michael Brown – Beard Specialist</option>
+              <option>Olivia Chen – Hair Treatment Expert</option>
+              <option>Daniel Smith – Junior Stylist</option>
+            </select>
+          </div>
+
 
           <!-- Date + Time -->
           <div class="row mb-4">
@@ -207,12 +323,28 @@
   </div>
 </section>
 
+<section id="contact" class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="mb-4">Contact Us</h2>
+
+    <p><i class="bi bi-geo-alt me-2"></i>123 Beauty Street, Ottawa</p>
+    <p><i class="bi bi-clock me-2"></i>Mon - Sat: 9AM - 6PM</p>
+    <p><i class="bi bi-telephone me-2"></i>(123) 456-7890</p>
+    <p><i class="bi bi-envelope me-2"></i>info@luxehair.com</p>
+  </div>
+</section>
+
+
 
 <!-- FOOTER -->
 <footer class="bg-dark text-white text-center py-4">
-  <p>Luxe Hair Studio | 123 Beauty Street | Open 9AM - 6PM | (123) 456-7890</p>
+  <div class="container">
+    <p class="mb-2 fw-semibold">Luxe Hair Studio</p>
+    <small>© 2026 All Rights Reserved</small>
+  </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

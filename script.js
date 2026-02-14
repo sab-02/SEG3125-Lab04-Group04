@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const timeSelect = document.getElementById("timeSelect");
   const nameInput = document.getElementById("nameInput");
   const emailInput = document.getElementById("emailInput");
-
+  const stylistSelect = document.getElementById("stylistSelect");
   const confirmBtn = document.getElementById("confirmBtn");
   const bookingSummary = document.getElementById("bookingSummary");
   const confirmationMessage = document.getElementById("confirmationMessage");
@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const service = serviceSelect.value;
     const date = dateInput.value;
     const time = timeSelect.value;
+    const stylist = stylistSelect.value;
+
 
     if (!service && !date && !time) {
       bookingSummary.innerHTML = `<p class="text-muted">No selection yet.</p>`;
@@ -48,6 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
         ${service || "—"}
       </div>
       <div class="mb-3">
+        <strong>Stylist:</strong><br>
+        ${stylist || "—"}
+      </div>
+      <div class="mb-3">
         <strong>Date:</strong><br>
         ${date || "—"}
       </div>
@@ -56,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ${time || "—"}
       </div>
     `;
+
 
     checkFormValidity();
   }
@@ -74,13 +81,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (
-    serviceSelect.value &&
-    dateInput.value &&
-    timeSelect.value &&
-    nameInput.value.trim().length > 1 &&
-    isEmailValid &&
-    isFutureDateTime()
-  ) {
+  serviceSelect.value &&
+  dateInput.value &&
+  timeSelect.value &&
+  nameInput.value.trim().length > 1 &&
+  isEmailValid &&
+  isFutureDateTime()
+) {
     confirmBtn.disabled = false;
   } else {
     confirmBtn.disabled = true;
@@ -111,5 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
   timeSelect.addEventListener("change", updateSummary);
   nameInput.addEventListener("input", checkFormValidity);
   emailInput.addEventListener("input", checkFormValidity);
+  stylistSelect.addEventListener("change", updateSummary);
 
 });

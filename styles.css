@@ -1,3 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#services,
+#experts,
+#booking,
+#contact {
+  scroll-margin-top: 90px;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   padding-top: 70px;
@@ -134,4 +145,30 @@ footer {
 .form-control.is-invalid {
   border-color: #b07d57;
   box-shadow: 0 0 0 0.15rem rgba(176, 125, 87, 0.15);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #8b5e3c;
+  border-radius: 50%;
+  padding: 20px;
+}
+/* Desktop spacing */
+.carousel-control-prev {
+  left: -40px;
+}
+
+.carousel-control-next {
+  right: -40px;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .carousel-control-prev {
+    left: 10px;
+  }
+
+  .carousel-control-next {
+    right: 10px;
+  }
 }
