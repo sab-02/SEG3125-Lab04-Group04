@@ -25,7 +25,7 @@ body {
 
 .service-card {
   transition: 0.3s ease;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .service-card:hover {
@@ -171,4 +171,17 @@ footer {
   .carousel-control-next {
     right: 10px;
   }
+}
+ /* Keep Images the same height */
+.service-card img {
+  height: 240px;
+  object-fit: cover;
+}
+
+.brown-navbar {
+  background-color: #8b5e3c !important; /* baby pink */
+}
+/* Hover effect for menu items */
+.brown-navbar .nav-link:hover {
+  color: white; /* baby pink text on hover */
 }

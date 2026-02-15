@@ -121,3 +121,27 @@ document.addEventListener("DOMContentLoaded", function () {
   stylistSelect.addEventListener("change", updateSummary);
 
 });
+
+//Ensure that service chosen is filled out on the form
+const serviceButtons = document.querySelectorAll(".select-service");
+
+serviceButtons.forEach(button => {
+  button.addEventListener("click", function () {
+
+    // Get service from button
+    const selectedService = this.getAttribute("data-service");
+
+    // Set dropdown value
+    serviceSelect.value = selectedService;
+
+    // Highlight selected card
+    document.querySelectorAll(".service-card").forEach(card => {
+      card.classList.remove("selected");
+    });
+
+    this.closest(".service-card").classList.add("selected");
+
+    // Update summary
+    updateSummary();
+  });
+});
